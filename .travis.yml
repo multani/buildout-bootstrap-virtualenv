@@ -1,0 +1,11 @@
+language: python
+python:
+    - "2.7"
+    - "3.3"
+    - "3.4"
+install:
+    - python bootstrap-venv.py
+script:
+    - test -f ./bin/buildout 
+    - ./bin/buildout
+    - test -f ./bin/python
