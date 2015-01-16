@@ -159,4 +159,4 @@ venv_dir = create_virtualenv(destination)
 bootstrap_path = download_bootstrap(destination)
 bootstrap_buildout(venv_dir, bootstrap_path)
 
-print("You can know run ./bin/buildout from directory %s" % real_destination)
+print("You can now run ./bin/buildout from directory %s" % real_destination)
