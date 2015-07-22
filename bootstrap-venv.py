@@ -43,13 +43,14 @@ You can also specify another directory to bootstrap the whole thing in::
 
 """
 
+VIRTUAL_ENV_VERSION = "13.1.0"
 
 # This URL is supposed to be stable
 BOOTSTRAP_BUILDOUT_URL = "https://bootstrap.pypa.io/bootstrap-buildout.py"
 
 # TODO: find a place where Virtualenv is FOR EVER AND EVER available.
 VIRTUALENV_URL = "https://pypi.python.org/packages/source/v/virtualenv/" + \
-                 "virtualenv-1.11.6.tar.gz"
+                 "virtualenv-" + VIRTUAL_ENV_VERSION + ".tar.gz"
 
 
 import io
