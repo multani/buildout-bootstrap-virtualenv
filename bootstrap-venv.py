@@ -146,6 +146,14 @@ def bootstrap_buildout(venv_dir, bootstrap_path):
     subprocess.check_call([python_bin, bootstrap_path])
 
 
+def run_buildout(root_dir):
+    buildout_bin = os.path.join(root_dir, "bin", "buildout")
+    assert os.path.exists(buildout_bin)
+
+    print("Running Buildout using: %s" % (buildout_bin,))
+    subprocess.check_call([buildout_bin])
+
+
 if len(sys.argv) == 2:
     real_destination = sys.argv[1]
 else:
@@ -159,5 +167,4 @@ destination = "."
 venv_dir = create_virtualenv(destination)
 bootstrap_path = download_bootstrap(destination)
 bootstrap_buildout(venv_dir, bootstrap_path)
-
-print("You can now run ./bin/buildout from directory %s" % real_destination)
+run_buildout(real_destination)
